@@ -10,10 +10,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BlogAPI.Business\BlogAPI.Business.csproj" />
+    <ProjectReference Include="..\BlogAPI.DTO\BlogAPI.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\AutoMapperMapProfile\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 
