@@ -1,6 +1,6 @@
-using Blog.Entities.Interfaces;
+using BlogAPI.Entities.Interfaces;
 using System.Collections.Generic;
-namespace Blog.Entities.Concrete
+namespace BlogAPI.Entities.Concrete
 {
     public class Category:ITable
     {

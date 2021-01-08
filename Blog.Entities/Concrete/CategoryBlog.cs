@@ -1,5 +1,5 @@
-using Blog.Entities.Interfaces;
-namespace Blog.Entities.Concrete
+using BlogAPI.Entities.Interfaces;
+namespace BlogAPI.Entities.Concrete
 {
     public class CategoryBlog:ITable
     {

@@ -1,4 +1,4 @@
-namespace Blog.Entities.Interfaces
+namespace BlogAPI.Entities.Interfaces
 {
     public interface ITable
     {
