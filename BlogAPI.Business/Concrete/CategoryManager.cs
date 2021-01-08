@@ -4,6 +4,7 @@ using BlogAPI.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BlogAPI.Business.Concrete
 {
@@ -13,6 +14,11 @@ namespace BlogAPI.Business.Concrete
         public CategoryManager(IGenericDal<Category> genericDal):base(genericDal)
         {
             _genericDal = genericDal;
+        }
+
+        public async Task<List<Category>> GetAllSortedById()
+        {
+            return await _genericDal.GetAllAsync(I => I.Id);
         }
     }
 }
