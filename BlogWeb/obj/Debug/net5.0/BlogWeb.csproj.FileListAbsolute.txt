@@ -35,3 +35,4 @@ C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\net5.0\BlogWeb.cspr
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\bin\Debug\net5.0\libman.json
