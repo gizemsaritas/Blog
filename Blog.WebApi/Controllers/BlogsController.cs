@@ -33,12 +33,12 @@ namespace BlogAPI.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByID(int id)
         {
-            return Ok(_mapper.Map<BlogListDto>( await _blogService.FindById(id)));
+            return Ok(_mapper.Map<BlogListDto>( await _blogService.FindByIdAsync(id)));
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromForm]BlogAddModel blogAddModel)
         {
-            var uploadModel = await UploadFile(blogAddModel.Image, "image/jpeg");
+            var uploadModel = await UploadFileAsync(blogAddModel.Image, "image/jpeg");
             if (uploadModel.UploadState == UploadState.Success)
             {
                 blogAddModel.ImagePath = uploadModel.NewName;
@@ -62,16 +62,25 @@ namespace BlogAPI.WebApi.Controllers
             {
                 return BadRequest("geçersiz id");
             }
-            var uploadModel = await UploadFile(blogUpdateModel.Image, "image/jpeg");
+            var uploadModel = await UploadFileAsync(blogUpdateModel.Image, "image/jpeg");
             if (uploadModel.UploadState == UploadState.Success)
             {
-                blogUpdateModel.ImagePath = uploadModel.NewName;
-                await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
+                var updatedBlog = await _blogService.FindByIdAsync(blogUpdateModel.Id);
+                updatedBlog.ShortDescription = blogUpdateModel.ShortDescription;
+                updatedBlog.Description = blogUpdateModel.Description;
+                updatedBlog.Title = blogUpdateModel.Title;
+                updatedBlog.ImagePath = uploadModel.NewName;
+                await _blogService.UpdateAsync(updatedBlog);
                 return NoContent();
             }
             else if (uploadModel.UploadState == UploadState.NotExist)
             {
-                await _blogService.UpdateAsync(_mapper.Map<Blog>(blogUpdateModel));
+                var updatedBlog=await _blogService.FindByIdAsync(blogUpdateModel.Id);
+                updatedBlog.ShortDescription = blogUpdateModel.ShortDescription;
+                updatedBlog.Description = blogUpdateModel.Description;
+                updatedBlog.Title = blogUpdateModel.Title;
+
+                await _blogService.UpdateAsync(updatedBlog);
                 return NoContent();
             }
             else

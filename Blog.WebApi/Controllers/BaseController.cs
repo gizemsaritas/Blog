@@ -14,7 +14,7 @@ namespace BlogAPI.WebApi.Controllers
     [ApiController]
     public class BaseController : ControllerBase
     {
-        public async Task<UploadModel> UploadFile(IFormFile file,string contentType)
+        public async Task<UploadModel> UploadFileAsync(IFormFile file,string contentType)
         {
             UploadModel uploadModel = new UploadModel();
             if (file != null)
@@ -28,7 +28,7 @@ namespace BlogAPI.WebApi.Controllers
                 else
                 {
                     var newName = Guid.NewGuid() + Path.GetExtension(file.FileName);
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroott/img" + newName);
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/" + newName);
                     var stream = new FileStream(path, FileMode.Create);
                     await file.CopyToAsync(stream);
                     uploadModel.NewName = newName;
