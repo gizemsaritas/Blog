@@ -15,7 +15,8 @@ namespace BlogAPI.Business.Containers.MicrosoftIoC
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
             services.AddScoped<IBlogService, BlogManager>();
             services.AddScoped<IBlogDal,EfBlogRepository>();
-
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICategoryDal, EfCategoryRepository>();
 
         }
     }

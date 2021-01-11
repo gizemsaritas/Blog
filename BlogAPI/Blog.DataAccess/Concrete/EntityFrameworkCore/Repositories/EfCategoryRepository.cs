@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
-    class EfCategoryRepository:EfGenericRepository<Category>,ICategoryDal
+    public class EfCategoryRepository:EfGenericRepository<Category>,ICategoryDal
     {
     }
 }

@@ -13,12 +13,12 @@ namespace BlogAPI.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CatogoriesController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
 
-        public CatogoriesController(ICategoryService categoryService,  IMapper mapper)
+        public CategoriesController(ICategoryService categoryService,  IMapper mapper)
         {
             _mapper = mapper;
             _categoryService = categoryService;
