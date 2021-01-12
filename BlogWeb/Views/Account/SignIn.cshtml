@@ -1,0 +1,38 @@
+
+@model AppUserLoginModel 
+@{ 
+  Layout=null; 
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/sign-in.css">
+    <link rel="stylesheet" href="/css/united.css">
+    
+</head>
+
+<body>
+    <div class="wrapper fadeIn">
+        <div id="formContent">
+            <div class="fadeIn">
+                <img src="https://lh3.googleusercontent.com/proxy/FEQFkQazcyDNM4MYWAb3TYIwkQYhm5_CHQ8zPa9-Dt6Zx390Vxo1wLb_CVpEa7owznmjGa3pEK7EKa4eWyM1t0l0ggUnvtqn-SytjZfuLqECnEcS9CpH4yyJ" id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->
+            <form asp-action="SignIn" method="POST">
+                <input asp-for="UserName" type="text" id="login" class="fadeIn" name="login" placeholder="login">
+                <input asp-for="Password" type="password" id="password" class="fadeIn" name="login" placeholder="password">
+                <input type="submit" class="fadeIn" value="Log In" />
+            </form>
+            @* <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div> *@
+        </div>
+    </div>
+</body>
+
+</html>

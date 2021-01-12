@@ -36,3 +36,5 @@ C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\BlogW
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryList\default.cshtml.g.cs
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BlogDetail.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\GetCategoryName\default.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignIn.cshtml.g.cs

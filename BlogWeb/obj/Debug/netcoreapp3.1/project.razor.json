@@ -12474,6 +12474,38 @@
         }
       },
       {
+        "HashCode": -1997223792,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__GetCategoryNameViewComponentTagHelper",
+        "AssemblyName": "BlogWeb",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:get-category-name",
+            "Attributes": [
+              {
+                "Name": "category-id"
+              }
+            ]
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "MVC.ViewComponent",
+            "Name": "category-id",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "categoryId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__GetCategoryNameViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "GetCategoryName"
+        }
+      },
+      {
         "HashCode": 1912741130,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14444,6 +14476,11 @@
   "RootNamespace": "BlogWeb",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Views\\Shared\\Components\\GetCategoryName\\default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\GetCategoryName\\default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -14456,6 +14493,11 @@
     {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Views\\Shared\\Components\\CategoryList\\default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\CategoryList\\default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Views\\Account\\SignIn.cshtml",
+      "TargetPath": "Views\\Account\\SignIn.cshtml",
       "FileKind": "mvc"
     },
     {
