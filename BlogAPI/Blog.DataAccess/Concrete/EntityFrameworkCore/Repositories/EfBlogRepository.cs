@@ -13,7 +13,7 @@ namespace BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Repositories
 {
     public class EfBlogRepository : EfGenericRepository<Blog>, IBlogDal
     {
-        public async Task<List<Blog>> GetAllByCategoryId(int categoryId)
+        public async Task<List<Blog>> GetAllByCategoryIdAsync(int categoryId)
         {
             using var context = new BlogContext();
             return await context.Blogs.Join(context.CategoryBlogs, b => b.Id, cb => cb.BlogId, (blog, categoryBlog) => new

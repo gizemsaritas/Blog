@@ -1,4 +1,5 @@
-﻿using BlogAPI.Business.Interfaces;
+﻿
+using BlogAPI.Business.Interfaces;
 using BlogAPI.Business.Tools.JWTTool;
 using BlogAPI.DTO.DTOs.AppUserDtos;
 using BlogAPI.WebApi.CustomFilters;
@@ -24,7 +25,7 @@ namespace BlogAPI.WebApi.Controllers
             _appUserService = appUserService;
             _jwtService = jwtService;
         }
-        [HttpPost]
+        [HttpPost("[action]")]
         [ValidModel]
         public async Task<IActionResult> SignIn(AppUserLoginDto appUserLoginDto)
         {
