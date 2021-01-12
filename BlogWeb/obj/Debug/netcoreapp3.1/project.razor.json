@@ -10256,6 +10256,41 @@
         }
       },
       {
+        "HashCode": -1527352711,
+        "Kind": "ITagHelper",
+        "Name": "BlogWeb.TagHelpers.ImageTagHelper",
+        "AssemblyName": "BlogWeb",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "getblogimage"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "ITagHelper",
+            "Name": "id",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
+          },
+          {
+            "Kind": "ITagHelper",
+            "Name": "blog-image-type",
+            "TypeName": "BlogWeb.Enums.BlogImageType",
+            "IsEnum": true,
+            "Metadata": {
+              "Common.PropertyName": "BlogImageType"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "BlogWeb.TagHelpers.ImageTagHelper"
+        }
+      },
+      {
         "HashCode": 1226202186,
         "Kind": "ITagHelper",
         "Name": "Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper",
