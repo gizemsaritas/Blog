@@ -1,4 +1,5 @@
-﻿using BlogAPI.Entities.Interfaces;
+﻿using BlogAPI.Entities.Concrete;
+using BlogAPI.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -13,6 +14,7 @@ namespace BlogAPI.DataAccess.Interfaces
         Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity,bool>> filter);
         Task<List<TEntity>> GetAllAsync<TKey>(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TKey>> keySelector);
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter);
+        
         Task<TEntity> FindByIdAsync(int id);
         Task AddAsync(TEntity entity);
         Task UpdateAsync(TEntity entity);

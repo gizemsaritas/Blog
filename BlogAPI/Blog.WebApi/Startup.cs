@@ -1,6 +1,8 @@
 using AutoMapper;
 using BlogAPI.Business.Containers.MicrosoftIoC;
 using BlogAPI.Business.StringInfos;
+using BlogAPI.WebApi.CustomFilters;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,7 @@ namespace BlogAPI.WebApi
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
+            services.AddScoped(typeof(ValidId<>));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt=> {
                 opt.RequireHttpsMetadata = false;
                 opt.TokenValidationParameters = new TokenValidationParameters
@@ -45,7 +48,7 @@ namespace BlogAPI.WebApi
                     ClockSkew = TimeSpan.Zero,    //zaman farký
                 };
             });
-            services.AddControllers().AddNewtonsoftJson(opt=> { opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; });
+            services.AddControllers().AddNewtonsoftJson(opt=> { opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; }).AddFluentValidation();
         } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +61,7 @@ namespace BlogAPI.WebApi
 
             app.UseRouting();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

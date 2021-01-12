@@ -1,6 +1,7 @@
 ﻿
 using BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Context;
 using BlogAPI.DataAccess.Interfaces;
+using BlogAPI.Entities.Concrete;
 using BlogAPI.Entities.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -56,6 +57,7 @@ namespace BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Repositories
             using var context = new BlogContext();
             return await context.Set<TEntity>().FirstOrDefaultAsync(filter);
         }
+
 
         public async Task RemoveAsync(TEntity entity)
         {
