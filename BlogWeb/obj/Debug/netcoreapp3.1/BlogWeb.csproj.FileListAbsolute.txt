@@ -38,3 +38,9 @@ C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\BlogDetail.cshtml.g.cs
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\GetCategoryName\default.cshtml.g.cs
 C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignIn.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Index.cshtml.g.cs
+C:\Users\developer04\Desktop\Projects\Blog\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\Create.cshtml.g.cs

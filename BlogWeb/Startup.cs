@@ -23,6 +23,7 @@ namespace BlogWeb
             services.AddHttpClient<IBlogApiService,BlogApiManager>();
             services.AddHttpClient<ICategoryApiService,CategoryApiManager>();
             services.AddHttpClient<IImageApiService,ImageApiManager>();
+            services.AddHttpClient<IAuthApiService,AuthApiManager>();
             services.AddControllersWithViews();
         }
 
@@ -40,7 +41,8 @@ namespace BlogWeb
 
             app.UseEndpoints(endpoints =>
             {
-               endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute(name:"areas",pattern:"{area}/{controller=Home}/{action=Index}/{id?}");
+               endpoints.MapControllerRoute(name:"default",pattern:"{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
