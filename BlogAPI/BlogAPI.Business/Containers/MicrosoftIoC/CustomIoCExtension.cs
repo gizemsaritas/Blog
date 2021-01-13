@@ -19,12 +19,16 @@ namespace BlogAPI.Business.Containers.MicrosoftIoC
         {
             services.AddScoped(typeof(IGenericDal<>), typeof(EfGenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
+
             services.AddScoped<IBlogService, BlogManager>();
             services.AddScoped<IBlogDal,EfBlogRepository>();
+
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICategoryDal, EfCategoryRepository>();
+
             services.AddScoped<IAppUserService, AppUserManager>();
             services.AddScoped<IAppUserDal, EfAppUserRepository>();
+
             services.AddScoped<IJwtService, JwtManager>();
 
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginValidator>();
