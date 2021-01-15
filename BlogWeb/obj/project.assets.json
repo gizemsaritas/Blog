@@ -58,11 +58,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\BlogWeb.csproj",
+      "projectUniqueName": "C:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\BlogWeb.csproj",
       "projectName": "BlogWeb",
-      "projectPath": "C:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\BlogWeb.csproj",
+      "projectPath": "C:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\BlogWeb.csproj",
       "packagesPath": "C:\\Users\\developer04\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\obj\\",
+      "outputPath": "C:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
