@@ -2,30 +2,46 @@
 <div class="container-fluid col-8">
     <div class="card shadow mb-4 ">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Add Blog</h6>
         </div>
         <div class="card-body">
             <form class="user" asp-action="Create" method="POST" enctype="multipart/form-data">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input asp-for="Title" class="form-control form-control-user" placeholder="Title">
+                        <input asp-for="Title" class="form-control" placeholder="Title">
                     </div>
                     <div class="col-sm-6">
-                        <input asp-for="ShortDescription" class="form-control form-control-user"
+                        <input asp-for="ShortDescription" class="form-control "
                             placeholder="Short Description">
                     </div>
                 </div>
                 <div class="form-group">
-                    <input asp-for="Description" class="form-control form-control-user" placeholder="Description">
+                    <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
                 </div>
-                <div class="form-group">
-                    <input asp-for="Image" type="file" class="form-control form-control-user" placeholder="Description">
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input asp-for="Image" type="file" class="form-control " placeholder="Description">
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-primary btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-flag"></i>
+                            </span>
+                            <span class="text">Add Blog</span>
+                        </button>
+                    </div>
                 </div>
-                <hr>
-                <button type="submit" class="btn btn-primary btn-user btn-block">
-                    Add Blog
-                </button>
+                
             </form>
         </div>
     </div>
     </div>
+@section Css{
+    <link rel="stylesheet" href="/lib/Trumbowyg/dist/ui/trumbowyg.min.css">
+}
+@section JavaScript{
+    <script src="/lib/Trumbowyg/dist/trumbowyg.min.js"></script>
+    <script>
+        $("#Description").trumbowyg();
+    </script>
+}

@@ -10,6 +10,8 @@ namespace BlogWeb.ApiServices.Interfaces
          Task<BlogListModel> GetByIdAsync(int id);
          Task<List<BlogListModel>> GetAllByCategoryIdAsync(int id);
          Task AddAsync(BlogAddModel model);
-         
+         Task UpdateAsync(BlogUpdateModel model);
+         Task DeleteAsync(int id);
+         Task<List<CommentListModel>> GetCommentsAsync(int blogId,int? parentCommentId);
     }
 }

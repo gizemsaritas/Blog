@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BlogAPI.DTO.DTOs.CategoryDtos;
+using BlogAPI.DTO.DTOs.CommentDtos;
 using BlogAPI.DTOs.DTO.BlogDtos;
 using BlogAPI.Entities.Concrete;
 using BlogAPI.WebApi.Models;
@@ -20,6 +21,8 @@ namespace BlogAPI.WebApi.Mapping.AutoMapperMapProfile
             CreateMap<Category, CategoryAddDto>().ReverseMap();
             CreateMap<Category, CategoryListDto>().ReverseMap();
             CreateMap<Category, CategoryUpdateDto>().ReverseMap();
+            CreateMap<Comment, CommentListDto>().ReverseMap();
+            CreateMap<Comment, CommentAddDto>().ReverseMap();
         }
     }
 }

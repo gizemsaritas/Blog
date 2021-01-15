@@ -46,18 +46,22 @@
                                 <td>@blog.Title</td>
                                 <td>@blog.ShortDescription</td>
                                 <td>@blog.PostedTime.ToShortDateString()</td>
-                                <td> <a href="#" class="btn btn-warning btn-icon-split">
+                                <td> 
+                                    <a asp-action="Update" asp-route-id="@blog.Id" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="far fa-edit"></i>
                                         </span>
                                         <span class="text">Edit</span>
-                                    </a> </td>
-                                <td><a href="" class="btn btn-danger btn-icon-split">
+                                    </a> 
+                                </td>
+                                <td>
+                                    <a asp-action="Delete" asp-route-id="@blog.Id" class="btn btn-danger btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
                                         <span class="text">Delete</span>
-                                    </a></td>
+                                    </a>
+                                </td>
                             </tr>
                         }
 

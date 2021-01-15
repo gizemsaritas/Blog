@@ -37,12 +37,13 @@ namespace BlogAPI.WebApi.Controllers
             return BadRequest("kullanıcı adı veya şifre hatalı");
         }
         [HttpGet("[action]")]
-        [Authorize]
+        
+
+
         public async Task<IActionResult> ActiveUser()
         {
             var user=await _appUserService.FindByNameAsync(User.Identity.Name);
             return Ok(new AppUserDto {Id=user.Id, Name=user.Name,SurName=user.SurName});
         }
-
     }
 }

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using BlogAPI.Business.Interfaces;
+using BlogAPI.Business.Tools.LogTool;
 using BlogAPI.DTO.DTOs.CategoryDtos;
 using BlogAPI.Entities.Concrete;
 using BlogAPI.WebApi.CustomFilters;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,11 +19,13 @@ namespace BlogAPI.WebApi.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
+        private readonly ICustomLogger _customLogger;
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
 
-        public CategoriesController(ICategoryService categoryService,  IMapper mapper)
+        public CategoriesController(ICategoryService categoryService,  IMapper mapper,ICustomLogger customLogger)
         {
+            _customLogger = customLogger;
             _mapper = mapper;
             _categoryService = categoryService;
         }
@@ -60,7 +64,7 @@ namespace BlogAPI.WebApi.Controllers
         [ServiceFilter(typeof(ValidId<Category>))]
         public async Task<IActionResult> Delete(int id)
         {
-            await _categoryService.RemoveAsync(new Category { Id = id });
+            await _categoryService.RemoveAsync(await _categoryService.FindByIdAsync(id));
             return NoContent();
         }
         [HttpGet("[action]")]
@@ -78,6 +82,14 @@ namespace BlogAPI.WebApi.Controllers
                 listCategory.Add(categoryWithBlogsCountDto);
             }
             return Ok(listCategory);
+        }
+
+        [Route("/Error")]
+        public IActionResult Error()
+        {
+            var errorInfo= HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+            _customLogger.LogError($"Hatanın oluştuğu yer:{errorInfo.Path}\n Hata Mesajı:{errorInfo.Error.Message}\n Stack Trace : {errorInfo.Error.StackTrace}");
+            return Problem(detail: "bir hata oluştu");
         }
     }
 }

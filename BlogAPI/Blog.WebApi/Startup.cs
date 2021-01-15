@@ -42,22 +42,24 @@ namespace BlogAPI.WebApi
                     ValidIssuer = JwtInfo.Issuer,
                     ValidAudience = JwtInfo.Audience,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtInfo.SecurityKey)),
-                    ValidateLifetime = true,  
+                    ValidateLifetime = true,
                     ValidateAudience = true,
                     ValidateIssuer = true,         //yalnýzca olan audince dinlesin
                     ClockSkew = TimeSpan.Zero,    //zaman farký
+                    ValidateIssuerSigningKey = true
                 };
             });
             services.AddControllers().AddNewtonsoftJson(opt=> { opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; }).AddFluentValidation();
         } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app/*, IWebHostEnvironment env*/)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            app.UseExceptionHandler("/Error");
 
             app.UseRouting();
             app.UseStaticFiles();

@@ -14476,6 +14476,11 @@
   "RootNamespace": "BlogWeb",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Areas\\Admin\\Views\\Blog\\Update.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Blog\\Update.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Views\\Shared\\Components\\GetCategoryName\\default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\GetCategoryName\\default.cshtml",
       "FileKind": "mvc"
@@ -14486,6 +14491,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Areas\\Admin\\Views\\Category\\Create.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Category\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14493,6 +14503,11 @@
     {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Areas\\Admin\\Views\\Category\\Update.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Category\\Update.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14518,6 +14533,11 @@
     {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Areas\\Admin\\Views\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blog\\BlogWeb\\Areas\\Admin\\Views\\Category\\Index.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Category\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
