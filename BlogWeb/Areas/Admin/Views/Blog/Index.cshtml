@@ -26,6 +26,7 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Posted Time</th>
+                            <th>Category</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -35,6 +36,7 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>Posted Time</th>
+                            <th>Category</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -46,6 +48,14 @@
                                 <td>@blog.Title</td>
                                 <td>@blog.ShortDescription</td>
                                 <td>@blog.PostedTime.ToShortDateString()</td>
+                                 @* <td> 
+                                    <a asp-action="AssignCategory" asp-route-id="@blog.Id" class="btn btn-warning btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="far fa-edit"></i>
+                                        </span>
+                                        <span class="text">Kategori Ata</span>
+                                    </a> 
+                                </td> *@
                                 <td> 
                                     <a asp-action="Update" asp-route-id="@blog.Id" class="btn btn-warning btn-icon-split">
                                         <span class="icon text-white-50">
