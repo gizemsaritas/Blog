@@ -35,6 +35,7 @@ namespace BlogAPI.WebApi
             services.AddAutoMapper(typeof(Startup));
             services.AddDependencies();
             services.AddScoped(typeof(ValidId<>));
+            services.AddMemoryCache();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt=> {
                 opt.RequireHttpsMetadata = false;
                 opt.TokenValidationParameters = new TokenValidationParameters
