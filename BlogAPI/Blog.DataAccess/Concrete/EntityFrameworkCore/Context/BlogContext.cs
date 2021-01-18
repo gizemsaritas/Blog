@@ -2,13 +2,21 @@
 using BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Mapping;
 using BlogAPI.Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 namespace BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Context
 {
     public class BlogContext : DbContext
     {
+        private readonly IConfiguration _configuration;
+
+        public BlogContext(IConfiguration configuration )
+        {
+            _configuration = configuration;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source = 192.168.0.120, 11433;Initial Catalog = test; User ID = dba; Password = S+dba+142");
+            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("db"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

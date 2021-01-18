@@ -4,6 +4,7 @@ using BlogAPI.Business.Interfaces;
 using BlogAPI.Business.Tools.JWTTool;
 using BlogAPI.Business.Tools.LogTool;
 using BlogAPI.Business.ValidationRules.FluentValidation;
+using BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Context;
 using BlogAPI.DataAccess.Concrete.EntityFrameworkCore.Repositories;
 using BlogAPI.DataAccess.Interfaces;
 using BlogAPI.DTO.DTOs.AppUserDtos;
@@ -19,6 +20,8 @@ namespace BlogAPI.Business.Containers.MicrosoftIoC
     {
         public static void AddDependencies(this IServiceCollection services)
         {
+            services.AddDbContext<BlogContext>();
+
             services.AddScoped(typeof(IGenericDal<>), typeof(EfGenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericManager<>));
 
