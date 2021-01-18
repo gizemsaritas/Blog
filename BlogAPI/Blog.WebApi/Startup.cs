@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,26 @@ namespace BlogAPI.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("doc", new OpenApiInfo
+                {
+                    Title = "Blog Api",
+                    Description = "Blog Api Document",
+                    Contact = new OpenApiContact
+                    {
+                        Email = "ymgcon@hotmail.com",
+                        Name = "Gizem Sarýtaþ"
+                    }
+                });
+                opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    In = ParameterLocation.Header,
+                    Name = "Authorization",
+                    Type=SecuritySchemeType.Http,
+                    Description="Bearer {token}"
+                });
+            });
             services.Configure<JwtInfo>(Configuration.GetSection("JWTInfo"));
             var jwtInfo = Configuration.GetSection("JWTInfo").Get<JwtInfo>();
 
@@ -69,6 +90,12 @@ namespace BlogAPI.WebApi
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(opt=>
+            {
+                opt.SwaggerEndpoint("/swagger/doc/swagger.json", "Blog Api");
+            });
 
             app.UseEndpoints(endpoints =>
             {

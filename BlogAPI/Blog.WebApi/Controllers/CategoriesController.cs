@@ -20,13 +20,11 @@ namespace BlogAPI.WebApi.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly IFacade _facade;
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
 
-        public CategoriesController(ICategoryService categoryService,  IMapper mapper,IFacade facade)
+        public CategoriesController(ICategoryService categoryService,  IMapper mapper)
         {
-            _facade = facade;
             _mapper = mapper;
             _categoryService = categoryService;
         }
@@ -61,6 +59,7 @@ namespace BlogAPI.WebApi.Controllers
             return NoContent();
         }
         [HttpDelete("{id}")]
+
         [Authorize]
         [ServiceFilter(typeof(ValidId<Category>))]
         public async Task<IActionResult> Delete(int id)
@@ -83,14 +82,6 @@ namespace BlogAPI.WebApi.Controllers
                 listCategory.Add(categoryWithBlogsCountDto);
             }
             return Ok(listCategory);
-        }
-
-        [Route("/Error")]
-        public IActionResult Error()
-        {
-            var errorInfo= HttpContext.Features.Get<IExceptionHandlerPathFeature>();
-            _facade.CustomLogger.LogError($"Hatanın oluştuğu yer:{errorInfo.Path}\n Hata Mesajı:{errorInfo.Error.Message}\n Stack Trace : {errorInfo.Error.StackTrace}");
-            return Problem(detail: "bir hata oluştu");
         }
     }
 }
