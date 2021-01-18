@@ -98,4 +98,3 @@ C:\Users\developer04\Desktop\Projects\Blogs\BlogWeb\obj\Debug\netcoreapp3.1\Blog
 C:\Users\developer04\Desktop\Projects\Blogs\BlogWeb\obj\Debug\netcoreapp3.1\BlogWeb.dll
 C:\Users\developer04\Desktop\Projects\Blogs\BlogWeb\obj\Debug\netcoreapp3.1\BlogWeb.pdb
 C:\Users\developer04\Desktop\Projects\Blogs\BlogWeb\obj\Debug\netcoreapp3.1\BlogWeb.genruntimeconfig.cache
-C:\Users\developer04\Desktop\Projects\Blogs\BlogWeb\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Blog\AssignCategory.cshtml.g.cs

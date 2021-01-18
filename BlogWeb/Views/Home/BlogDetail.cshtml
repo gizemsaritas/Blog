@@ -46,8 +46,9 @@
 <div class="card my-4">
     <h5 class="card-header">Yorum Yaz:</h5>
     <div class="card-body">
-        <form method="POST" action="/Home/AddToComment">
+        <form method="POST">
             <input type="hidden" name="BlogId" value="@Model.Id">
+            <input type="hidden" name="ParentCommentId">
             <div class="form-group">
                 <input type="text" class="form-control" name="AuthorName" required placeholder="Adınız...">
             </div>
@@ -67,8 +68,9 @@
 @section JavaScript{
     <script>
         function showCommentForm(id,blogId){
-            let html=`<div class="card my-4"><h5 class="card-header">Yorum Yaz:</h5><div class="card-body"><form method="POST" action="/Home/AddToComment"> <input type="hidden" name="BlogId" value="${blogId}"> <input type="hidden" name="ParentCommentId" value="${id}"><div class="form-group"> <input type="text" class="form-control" name="AuthorName" required placeholder="Adınız..."></div><div class="form-group"> <input type="email" class="form-control" name="AuthorEmail" required placeholder="Email..."></div><div class="form-group"><textarea class="form-control" name="Description" rows="3" required placeholder="Yorumunuz..."></textarea></div><button type="button" class="btn btn-warning" onClick="hideCommentForm(${id})">Vazgeç</button> <button type="submit" class="btn btn-primary">Gönder</button></form></div></div>`;
+            let html=`<div class="card my-4"><h5 class="card-header">Yorum Yaz:</h5><div class="card-body"><form method="POST"> <input type="hidden" name="BlogId" value="${blogId}"> <input type="hidden" name="ParentCommentId" value="${id}"><div class="form-group"> <input type="text" class="form-control" name="AuthorName" required placeholder="Adınız..."></div><div class="form-group"> <input type="email" class="form-control" name="AuthorEmail" required placeholder="Email..."></div><div class="form-group"><textarea class="form-control" name="Description" rows="3" required placeholder="Yorumunuz..."></textarea></div><button type="button" class="btn btn-warning" onClick="hideCommentForm(${id})">Vazgeç</button> <button type="submit" class="btn btn-primary">Gönder</button></form></div></div>`;
             $("#commentBox"+id).html(html);
+
         }
         function hideCommentForm(id){
             $("#commentBox"+id).html("");

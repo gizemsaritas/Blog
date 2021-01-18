@@ -14501,11 +14501,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\Views\\Shared\\Components\\LastFiveBlog\\default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\LastFiveBlog\\default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\Areas\\Admin\\Views\\Blog\\Update.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Blog\\Update.cshtml",
       "FileKind": "mvc"
@@ -14526,11 +14521,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\Areas\\Admin\\Views\\Blog\\AssignCategory.cshtml",
-      "TargetPath": "Areas\\Admin\\Views\\Blog\\AssignCategory.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\Areas\\Admin\\Views\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14543,11 +14533,6 @@
     {
       "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\Views\\Shared\\Components\\GetCategoryName\\default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\GetCategoryName\\default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\developer04\\Desktop\\Projects\\Blogs\\BlogWeb\\Views\\Shared\\Components\\Search\\default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\Search\\default.cshtml",
       "FileKind": "mvc"
     },
     {
