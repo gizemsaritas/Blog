@@ -120,7 +120,7 @@ namespace BlogAPI.WebApi.Controllers
         }
         [HttpDelete("[action]")]
         [ValidModel]
-        public async Task<IActionResult> RemoveFromCategory(CategoryBlogDto categoryBlogDto)
+        public async Task<IActionResult> RemoveFromCategory([FromQuery]CategoryBlogDto categoryBlogDto)
         {
             await _blogService.RemoveFromCategoryAsync(categoryBlogDto);
             return NoContent();
