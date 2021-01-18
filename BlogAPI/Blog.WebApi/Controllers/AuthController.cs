@@ -24,7 +24,6 @@ namespace BlogAPI.WebApi.Controllers
         {
             _appUserService = appUserService;
             _jwtService = jwtService;
-            var a = 5;
         }
         [HttpPost("[action]")]
         [ValidModel]

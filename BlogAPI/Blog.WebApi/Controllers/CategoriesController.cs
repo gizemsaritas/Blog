@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BlogAPI.Business.Interfaces;
+using BlogAPI.Business.Tools.FacadeTool;
 using BlogAPI.Business.Tools.LogTool;
 using BlogAPI.DTO.DTOs.CategoryDtos;
 using BlogAPI.Entities.Concrete;
@@ -19,13 +20,13 @@ namespace BlogAPI.WebApi.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly ICustomLogger _customLogger;
+        private readonly IFacade _facade;
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
 
-        public CategoriesController(ICategoryService categoryService,  IMapper mapper,ICustomLogger customLogger)
+        public CategoriesController(ICategoryService categoryService,  IMapper mapper,IFacade facade)
         {
-            _customLogger = customLogger;
+            _facade = facade;
             _mapper = mapper;
             _categoryService = categoryService;
         }
@@ -88,7 +89,7 @@ namespace BlogAPI.WebApi.Controllers
         public IActionResult Error()
         {
             var errorInfo= HttpContext.Features.Get<IExceptionHandlerPathFeature>();
-            _customLogger.LogError($"Hatanın oluştuğu yer:{errorInfo.Path}\n Hata Mesajı:{errorInfo.Error.Message}\n Stack Trace : {errorInfo.Error.StackTrace}");
+            _facade.CustomLogger.LogError($"Hatanın oluştuğu yer:{errorInfo.Path}\n Hata Mesajı:{errorInfo.Error.Message}\n Stack Trace : {errorInfo.Error.StackTrace}");
             return Problem(detail: "bir hata oluştu");
         }
     }

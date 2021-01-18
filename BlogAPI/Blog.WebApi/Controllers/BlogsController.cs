@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using BlogAPI.Business.Interfaces;
+using BlogAPI.Business.Tools.FacadeTool;
 using BlogAPI.DTO.DTOs.CategoryBlogDtos;
 using BlogAPI.DTO.DTOs.CategoryDtos;
 using BlogAPI.DTO.DTOs.CommentDtos;
@@ -28,11 +29,11 @@ namespace BlogAPI.WebApi.Controllers
         private readonly IBlogService _blogService;
         private readonly IMapper _mapper;
         private readonly ICommentService _commentService;
-        private readonly IMemoryCache _memoryCache;
+        private readonly IFacade _facade;
 
-        public BlogsController(IBlogService blogService,IMapper mapper,ICommentService commentService,IMemoryCache memoryCache)
+        public BlogsController(IBlogService blogService,IMapper mapper,ICommentService commentService, IFacade facade)
         {
-            _memoryCache = memoryCache;
+            _facade = facade;
             _blogService = blogService;
             _mapper = mapper;
             _commentService = commentService;
@@ -40,13 +41,13 @@ namespace BlogAPI.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            if(_memoryCache.TryGetValue("blogList",out List<BlogListDto> list))
+            if(_facade.MemoryCache.TryGetValue("blogList",out List<BlogListDto> list))
             {
                 return Ok(list);
             }
             var blogList = _mapper.Map<List<BlogListDto>>(await _blogService.GetAllSortedByPostedTimeAsync());
             Thread.Sleep(10000);
-            _memoryCache.Set("blogList", blogList, new MemoryCacheEntryOptions()
+            _facade.MemoryCache.Set("blogList", blogList, new MemoryCacheEntryOptions()
             {
                 AbsoluteExpiration=DateTime.Now.AddDays(1),
                 Priority=CacheItemPriority.Normal
